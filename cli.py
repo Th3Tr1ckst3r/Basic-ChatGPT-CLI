@@ -13,10 +13,8 @@ def main():
             completion = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[{"role": "system", "content": "You are an intelligent assistant called ChatGPT. Introduce yourself, chat with clients, & help anyway you can."},
-            {"role":"user", "content":user_input},
-            ])
-            text = "\n\nChatGPT: \n\n       {0}".format(completion.choices[0].message.content)
-            print(text)
+            {"role":"user", "content":user_input},])
+            print("\n\nChatGPT: \n\n       {0}".format(completion.choices[0].message.content))
             user_input = input("\n\n                                                    User:   ")
     except KeyboardInterrupt:
         sys.exit(1)
